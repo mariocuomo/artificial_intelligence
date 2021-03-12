@@ -1,0 +1,13 @@
+C:\Users\cuomo\source\repos\Artificial Intelligence\bin\Debug\netcoreapp3.1\Artificial Intelligence.exe
+C:\Users\cuomo\source\repos\Artificial Intelligence\bin\Debug\netcoreapp3.1\Artificial Intelligence.deps.json
+C:\Users\cuomo\source\repos\Artificial Intelligence\bin\Debug\netcoreapp3.1\Artificial Intelligence.runtimeconfig.json
+C:\Users\cuomo\source\repos\Artificial Intelligence\bin\Debug\netcoreapp3.1\Artificial Intelligence.runtimeconfig.dev.json
+C:\Users\cuomo\source\repos\Artificial Intelligence\bin\Debug\netcoreapp3.1\Artificial Intelligence.dll
+C:\Users\cuomo\source\repos\Artificial Intelligence\bin\Debug\netcoreapp3.1\Artificial Intelligence.pdb
+C:\Users\cuomo\source\repos\Artificial Intelligence\obj\Debug\netcoreapp3.1\Artificial Intelligence.csprojAssemblyReference.cache
+C:\Users\cuomo\source\repos\Artificial Intelligence\obj\Debug\netcoreapp3.1\Artificial Intelligence.AssemblyInfoInputs.cache
+C:\Users\cuomo\source\repos\Artificial Intelligence\obj\Debug\netcoreapp3.1\Artificial Intelligence.AssemblyInfo.cs
+C:\Users\cuomo\source\repos\Artificial Intelligence\obj\Debug\netcoreapp3.1\Artificial Intelligence.csproj.CoreCompileInputs.cache
+C:\Users\cuomo\source\repos\Artificial Intelligence\obj\Debug\netcoreapp3.1\Artificial Intelligence.dll
+C:\Users\cuomo\source\repos\Artificial Intelligence\obj\Debug\netcoreapp3.1\Artificial Intelligence.pdb
+C:\Users\cuomo\source\repos\Artificial Intelligence\obj\Debug\netcoreapp3.1\Artificial Intelligence.genruntimeconfig.cache
