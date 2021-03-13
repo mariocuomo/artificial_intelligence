@@ -7,7 +7,7 @@ namespace Artificial_Intelligence
 {
     static class Service
     {
-        static List<(String, String, int)> tmp = new List<(String, String, int)>
+        static List<(String, String, int)> distancecityToCity = new List<(String, String, int)>
             {
                     ( "Aquila", "Ancona",19),
                     ( "Aquila", "Perugia",17),
@@ -29,10 +29,27 @@ namespace Artificial_Intelligence
                     ( "Perugia", "Roma",17),
                     ( "Pisa", "Roma",37),
             };
+        
+        static List<(String, int)> distanceTNaples = new List<(String, int)>
+            {
+                    ( "Aquila",18),
+                    ( "Ancona",31),
+                    ( "Bari",22),
+                    ( "Bologna",47),
+                    ( "Firenze",40),
+                    ( "Genova",58),
+                    ( "Milano",65),
+                    ( "Perugia",29),
+                    ( "Pisa",44),
+                    ( "Roma",18),
+                    ( "Torino",71),
+            };
+
+
 
         static public List<(String, String, int)> ListGraph()
         {
-            return tmp;
+            return distancecityToCity;
         }
 
         static public List<String> searchPath_BFS(Graph<String> graph)
@@ -205,6 +222,52 @@ namespace Artificial_Intelligence
             return null;
         }
 
+        static public List<String> searchPath_Greedy(Graph<String> graph)
+        {
+            //Start from Milan to Naples
+            String start = "Milano";
+            String goal = "Napoli";
+
+            TreeNode<String> tree = new TreeNode<String>(start);
+            
+            List<String> visited = new List<string>();
+            visited.Add("Milano");
+
+            String min="";
+            String node = start;
+            int _min = int.MaxValue;
+
+            while (_min == int.MaxValue) {
+                foreach(String item in graph.getNeighborhoods(node))
+                {
+                    if(!visited.Contains(item))
+                    {
+                        if (item == "Napoli")
+                        {
+                            visited.Add("Napoli");
+                            return visited;
+                        }
+
+                        if (getdistanceToNaples(item) < _min) { 
+                            min = item;
+                            _min = getdistanceToNaples(item);
+                            visited.Add(item);
+                        }
+                    }
+                }
+                
+                if (_min == int.MaxValue)
+                    return null;
+
+                TreeNode<String> tmp = new TreeNode<String>(min);
+                tmp.Parent = tree;
+                node = min;
+                _min = int.MaxValue;
+            }
+            return null;
+        }
+
+
         static public List<String> DFS(Graph<String> graph, String node, TreeNode<String> tree)
         {
             foreach (String item in graph.getNeighborhoods(node))
@@ -254,13 +317,14 @@ namespace Artificial_Intelligence
             return tmp;
         }
 
+        /*return the cost of a path*/
         public static int getCost(List<String> path)
         {
             int cost = 0;
             String[] array = path.ToArray();
 
             for (int i = 0; i < path.Count-1; i++)
-                cost += (tmp.Find(p =>
+                cost += (distancecityToCity.Find(p =>
                 (p.Item1.Equals(array[i]) && p.Item2.Equals(array[i + 1]))
                 || (p.Item2.Equals(array[i]) && p.Item1.Equals(array[i + 1]))))
                 .Item3;
@@ -269,12 +333,19 @@ namespace Artificial_Intelligence
             return cost;
         }
 
+        /*return the cost from a city to other one*/
         public static int findCost(string from, string to)
         {
-            return (tmp.Find(p =>
+            return (distancecityToCity.Find(p =>
                 (p.Item1.Equals(from) && p.Item2.Equals(to))
                 || (p.Item2.Equals(from) && p.Item1.Equals(to))))
                 .Item3;
+        }
+
+        /*return the cost from a city to Naples*/
+        public static int getdistanceToNaples(string from)
+        {
+            return (distanceTNaples.Find(p => p.Item1.Equals(from))).Item2;
         }
     }
 }

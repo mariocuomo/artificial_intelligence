@@ -53,6 +53,17 @@ namespace Artificial_Intelligence
                 Console.WriteLine("Path available");
                 printPath(path);
             }
+
+            Console.WriteLine("Search path using Greedy...");
+
+            path = Service.searchPath_Greedy(graph);
+            if (path == null)
+                Console.WriteLine("No path available");
+            else
+            {
+                Console.WriteLine("Path available");
+                printPath(path);
+            }
         }
 
         static void printPath(List<String> path)
