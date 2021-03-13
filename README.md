@@ -16,5 +16,5 @@ Currently implemented:
 - [x] Depth First Search
 
 Waiting for refactoring:
-- [ ] Breadth First Search & Depth First Search in recursive mode
+- [ ] Breadth First Search & ~~Depth First Search~~- in recursive mode
 
