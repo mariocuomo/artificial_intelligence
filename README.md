@@ -22,5 +22,5 @@ Waiting for refactoring:
 ## Heuristic Search Algorithm
 Heuristic search is a form of search that exploits knowledge about a problem to find solutions more efficiently.<br>
 Currently implemented:
-- [ ] Greedy Search
+- [x] Greedy Search
 - [ ] A* search
