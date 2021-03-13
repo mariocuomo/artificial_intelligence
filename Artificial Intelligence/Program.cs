@@ -9,20 +9,38 @@ namespace Artificial_Intelligence
         static void Main(string[] args)
         {            
             Graph<String> graph = new Graph<string>(Service.ListGraph());
-            List<String> path = Service.searchPath(graph);
+            Console.WriteLine("Search path using BFS...");
+
+            List<String> path = Service.searchPath_BFS(graph);
             if(path==null)
                 Console.WriteLine("No path available");
             else{
-                StringBuilder sb = new StringBuilder();
-                sb.Append("Path available\n");
-                foreach (String state in path)
-                {
-                    sb.Append(state+"\n");
-                }
+                Console.WriteLine("Path available");
+                printPath(path);
+            }
 
-                Console.WriteLine(sb.ToString());
+
+            Console.WriteLine("Search path using DFS...");
+
+            path = Service.searchPath_DFS(graph);
+            if (path == null)
+                Console.WriteLine("No path available");
+            else
+            {
+                Console.WriteLine("Path available");
+                printPath(path);
             }
         }
+
+        static void printPath(List<String> path)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (String state in path)
+                sb.Append(state + "\n");
+            
+            Console.WriteLine(sb.ToString());
+        }
+
     }
 
 }

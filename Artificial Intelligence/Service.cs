@@ -34,7 +34,7 @@ namespace Artificial_Intelligence
             return tmp;
         }
 
-        static public List<String> searchPath(Graph<String> graph)
+        static public List<String> searchPath_BFS(Graph<String> graph)
         {
             //Start from Milan to Naples
             String start = "Milano";
@@ -79,6 +79,54 @@ namespace Artificial_Intelligence
 
             return null;
         }
+
+        static public List<String> searchPath_DFS(Graph<String> graph)
+        {
+            //Start from Milan to Naples
+            String start = "Milano";
+            String goal = "Napoli";
+
+            Stack<TreeNode<String>> fringe = new Stack<TreeNode<string>>();
+            TreeNode<String> tree = new TreeNode<String>(start);
+
+            foreach (String item in graph.getNeighborhoods(start))
+            {
+                TreeNode<String> tmp = new TreeNode<String>(item);
+                tmp.Parent = tree;
+                fringe.Push(tmp);
+            }
+
+            while (fringe.Count != 0)
+            {
+                TreeNode<String> node = fringe.Pop();
+                if (node.value.Equals(goal))
+                    return buildPath(node);
+
+                foreach (String item in graph.getNeighborhoods(node.value))
+                {
+                    //delete loop
+                    bool isInThePathToRoot = false;
+                    TreeNode<String> tmp = node;
+                    while (tmp != null && !isInThePathToRoot)
+                    {
+                        if (tmp.value.Equals(item))
+                            isInThePathToRoot = true;
+                        tmp = tmp.Parent;
+                    }
+
+                    if (!isInThePathToRoot)
+                    {
+                        TreeNode<String> _tmp = new TreeNode<String>(item);
+                        _tmp.Parent = node;
+                        fringe.Push(_tmp);
+                    }
+
+                }
+            }
+
+            return null;
+        }
+
 
         static List<String> buildPath(TreeNode<String> goal)
         {

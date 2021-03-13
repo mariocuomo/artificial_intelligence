@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cuomo\\source\\repos\\Artificial Intelligence\\Artificial Intelligence.csproj",
+      "projectUniqueName": "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence\\Artificial Intelligence.csproj",
       "projectName": "Artificial Intelligence",
-      "projectPath": "C:\\Users\\cuomo\\source\\repos\\Artificial Intelligence\\Artificial Intelligence.csproj",
+      "projectPath": "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence\\Artificial Intelligence.csproj",
       "packagesPath": "C:\\Users\\cuomo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cuomo\\source\\repos\\Artificial Intelligence\\obj\\",
+      "outputPath": "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

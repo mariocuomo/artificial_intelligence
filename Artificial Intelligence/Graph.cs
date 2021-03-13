@@ -10,7 +10,7 @@ namespace Artificial_Intelligence
         /*
          * this is a non oriented graph
          * we suppose that if there is the edge ("Roma","Milano",x)=("Milano","Roma",x) 
-         * and there is just one couple
+         * and there is just one couple of them
          * 
         */
         
