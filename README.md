@@ -13,4 +13,8 @@ I have a map of Italy that represents the operators and their costs associated: 
 These algorithms don't have any information about the problem and for this reason they are often the least efficient.<br>
 Currently implemented:
 - [x] Breadth First Search
+- [x] Depth First Search
+
+Waiting for refactoring:
+- [ ] Breadth First Search & Depth First Search in recursive mode
 
