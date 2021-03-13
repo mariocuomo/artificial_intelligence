@@ -14,6 +14,7 @@ These algorithms don't have any information about the problem and for this reaso
 Currently implemented:
 - [x] Breadth First Search
 - [x] Depth First Search
+- [ ] Uniform Cost Search
 
 Waiting for refactoring:
 - [ ] Breadth First Search & ~~Depth First Search~~- in recursive mode
