@@ -128,6 +128,48 @@ namespace Artificial_Intelligence
         }
 
 
+        static public List<String> searchPath_DFS_Recursive(Graph<String> graph)
+        {
+            TreeNode<String> tree = new TreeNode<String>("Milano");
+            return DFS(graph, "Milano", tree);
+        }
+
+        static public List<String> DFS(Graph<String> graph, String node, TreeNode<String> tree)
+        {
+            foreach (String item in graph.getNeighborhoods(node))
+            {
+                if (item == "Napoli")
+                {
+                    TreeNode<String> _tmp = new TreeNode<String>(item);
+                    _tmp.Parent = tree;
+                    return buildPath(_tmp);
+                }
+
+                bool isInThePathToRoot = false;
+                TreeNode<String> tmp = new TreeNode<string>();
+                tmp = tree;
+                while (tmp != null && !isInThePathToRoot)
+                {
+                    if (tmp.value.Equals(item))
+                        isInThePathToRoot = true;
+                    tmp = tmp.Parent;
+                }
+
+                if (!isInThePathToRoot)
+                {
+                    TreeNode<String> _tmp = new TreeNode<String>(item);
+                    _tmp.Parent = tree;
+                    List<String> path = DFS(graph, item, _tmp);
+                    if (path != null)
+                        return path;
+                }
+            }
+
+
+            return null;
+        }
+
+
         static List<String> buildPath(TreeNode<String> goal)
         {
             List<String> tmp = new List<string>();

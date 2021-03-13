@@ -37,5 +37,21 @@ namespace Artificial_Intelligence
             return tmp;
         }
 
+
+        public List<String> getNodes()
+        {
+            List<String> tmp = new List<String>();
+
+            foreach ((String, String, int) item in edge)
+            {
+                if (!tmp.Contains(item.Item1))
+                    tmp.Add(item.Item1);
+                if (!tmp.Contains(item.Item2))
+                    tmp.Add(item.Item2);
+            }
+
+            return tmp;
+        }
+
     }
 }

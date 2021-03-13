@@ -30,6 +30,18 @@ namespace Artificial_Intelligence
                 Console.WriteLine("Path available");
                 printPath(path);
             }
+
+
+            Console.WriteLine("Search path using DFS Recursive...");
+
+            path = Service.searchPath_DFS_Recursive(graph);
+            if (path == null)
+                Console.WriteLine("No path available");
+            else
+            {
+                Console.WriteLine("Path available");
+                printPath(path);
+            }
         }
 
         static void printPath(List<String> path)
