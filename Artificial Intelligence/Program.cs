@@ -49,6 +49,7 @@ namespace Artificial_Intelligence
             StringBuilder sb = new StringBuilder();
             foreach (String state in path)
                 sb.Append(state + "\n");
+            sb.Append("The cost of the path is " + Service.getCost(path)+"\n");
             
             Console.WriteLine(sb.ToString());
         }

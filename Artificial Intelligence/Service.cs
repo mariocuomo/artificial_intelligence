@@ -183,6 +183,44 @@ namespace Artificial_Intelligence
             return tmp;
         }
 
-        
+        public static int getCost(List<String> path)
+        {
+            List<(String, String, int)> tmp = new List<(String, String, int)>
+            {
+                    ( "Aquila", "Ancona",19),
+                    ( "Aquila", "Perugia",17),
+                    ( "Aquila", "Roma",11),
+                    ( "Ancona", "Bari",46),
+                    ( "Ancona", "Bologna",21),
+                    ( "Ancona", "Perugia",16),
+                    ( "Bari", "Roma",45),
+                    ( "Bologna", "Firenze",10),
+                    ( "Bologna", "Milano",21),
+                    ( "Firenze", "Genova",22),
+                    ( "Firenze", "Perugia",15),
+                    ( "Firenze", "Pisa",9),
+                    ( "Firenze", "Roma",28),
+                    ( "Genova", "Milano",14),
+                    ( "Genova", "Pisa",16),
+                    ( "Milano", "Torino",14),
+                    ( "Napoli", "Roma",22),
+                    ( "Perugia", "Roma",17),
+                    ( "Pisa", "Roma",37),
+            };
+
+            int cost = 0;
+            String[] array = path.ToArray();
+
+            for (int i = 0; i < path.Count-1; i++)
+                cost += (tmp.Find(p =>
+                (p.Item1.Equals(array[i]) && p.Item2.Equals(array[i + 1]))
+                || (p.Item2.Equals(array[i]) && p.Item1.Equals(array[i + 1]))))
+                .Item3;
+
+
+            return cost;
+        }
+
+
     }
 }
