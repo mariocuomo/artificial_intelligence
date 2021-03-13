@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Artificial_Intelligence
@@ -134,6 +135,65 @@ namespace Artificial_Intelligence
             return DFS(graph, "Milano", tree);
         }
 
+        static public List<String> searchPathUCS(Graph<String> graph)
+        {
+            //Start from Milan to Naples
+            String start = "Milano";
+            String goal = "Napoli";
+
+
+            List<TreeNode<String>> fringe = new List<TreeNode<string>>();
+            TreeNode<String> tree = new TreeNode<String>(start);
+
+            foreach (String item in graph.getNeighborhoods(start))
+            {
+                TreeNode<String> tmp = new TreeNode<String>(item);
+                tmp.Parent = tree;
+                tmp.cost = findCost("Milano", item);
+                fringe.Add(tmp);
+            }
+
+            while (fringe.Count != 0)
+            {
+                int min_cost = 0;
+                foreach (TreeNode<String> item in fringe)
+                {
+                    if (item.cost < fringe.ElementAt(min_cost).cost)
+                        min_cost = fringe.IndexOf(item);
+                }
+
+                TreeNode<String> node = fringe.ElementAt(min_cost);
+                fringe.RemoveAt(min_cost);
+
+                if (node.value.Equals(goal))
+                    return buildPath(node);
+
+                foreach (String item in graph.getNeighborhoods(node.value))
+                {
+                    //delete loop
+                    bool isInThePathToRoot = false;
+                    TreeNode<String> tmp = node;
+                    while (tmp != null && !isInThePathToRoot)
+                    {
+                        if (tmp.value.Equals(item))
+                            isInThePathToRoot = true;
+                        tmp = tmp.Parent;
+                    }
+
+                    if (!isInThePathToRoot)
+                    {
+                        TreeNode<String> _tmp = new TreeNode<String>(item);
+                        _tmp.Parent = node;
+                        _tmp.cost= findCost(node.value, item)+ _tmp.Parent.cost;
+                        fringe.Add(_tmp);
+                    }
+
+                }
+            }
+
+            return null;
+        }
+
         static public List<String> DFS(Graph<String> graph, String node, TreeNode<String> tree)
         {
             foreach (String item in graph.getNeighborhoods(node))
@@ -221,6 +281,35 @@ namespace Artificial_Intelligence
             return cost;
         }
 
+        public static int findCost(string from, string to)
+        {
+            List<(String, String, int)> tmp = new List<(String, String, int)>
+            {
+                    ( "Aquila", "Ancona",19),
+                    ( "Aquila", "Perugia",17),
+                    ( "Aquila", "Roma",11),
+                    ( "Ancona", "Bari",46),
+                    ( "Ancona", "Bologna",21),
+                    ( "Ancona", "Perugia",16),
+                    ( "Bari", "Roma",45),
+                    ( "Bologna", "Firenze",10),
+                    ( "Bologna", "Milano",21),
+                    ( "Firenze", "Genova",22),
+                    ( "Firenze", "Perugia",15),
+                    ( "Firenze", "Pisa",9),
+                    ( "Firenze", "Roma",28),
+                    ( "Genova", "Milano",14),
+                    ( "Genova", "Pisa",16),
+                    ( "Milano", "Torino",14),
+                    ( "Napoli", "Roma",22),
+                    ( "Perugia", "Roma",17),
+                    ( "Pisa", "Roma",37),
+            };
 
+            return (tmp.Find(p =>
+                (p.Item1.Equals(from) && p.Item2.Equals(to))
+                || (p.Item2.Equals(from) && p.Item1.Equals(to))))
+                .Item3;
+        }
     }
 }

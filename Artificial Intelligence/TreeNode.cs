@@ -11,11 +11,14 @@ namespace Artificial_Intelligence
             public T value;
             private List<TreeNode<T>> children = new List<TreeNode<T>>();
             public TreeNode<T> Parent;
+            public int cost;
 
         public TreeNode()
         {
             
         }
+
+        
         public TreeNode(T value){
                 this.value = value;
                 this.Parent = null;
