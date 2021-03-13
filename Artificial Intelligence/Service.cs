@@ -7,9 +7,7 @@ namespace Artificial_Intelligence
 {
     static class Service
     {
-        static public List<(String, String, int)> ListGraph()
-        {
-            List<(String, String, int)> tmp = new List<(String, String, int)>
+        static List<(String, String, int)> tmp = new List<(String, String, int)>
             {
                     ( "Aquila", "Ancona",19),
                     ( "Aquila", "Perugia",17),
@@ -32,6 +30,8 @@ namespace Artificial_Intelligence
                     ( "Pisa", "Roma",37),
             };
 
+        static public List<(String, String, int)> ListGraph()
+        {
             return tmp;
         }
 
@@ -97,13 +97,23 @@ namespace Artificial_Intelligence
                 fringe.Push(tmp);
             }
 
+            Stack<TreeNode<String>> tmp_fringe = new Stack<TreeNode<String>>(fringe.Reverse());
+            fringe.Clear();
+
+            while (tmp_fringe.Count != 0)
+                fringe.Push(tmp_fringe.Pop());
+
             while (fringe.Count != 0)
             {
                 TreeNode<String> node = fringe.Pop();
-                if (node.value.Equals(goal))
+                
+                if(node.value.Equals("Napoli"))
                     return buildPath(node);
 
-                foreach (String item in graph.getNeighborhoods(node.value))
+                List<String> lst = graph.getNeighborhoods(node.value);
+                lst.Reverse();
+
+                foreach(String item in lst)
                 {
                     //delete loop
                     bool isInThePathToRoot = false;
@@ -121,9 +131,10 @@ namespace Artificial_Intelligence
                         _tmp.Parent = node;
                         fringe.Push(_tmp);
                     }
-
                 }
+
             }
+
 
             return null;
         }
@@ -245,29 +256,6 @@ namespace Artificial_Intelligence
 
         public static int getCost(List<String> path)
         {
-            List<(String, String, int)> tmp = new List<(String, String, int)>
-            {
-                    ( "Aquila", "Ancona",19),
-                    ( "Aquila", "Perugia",17),
-                    ( "Aquila", "Roma",11),
-                    ( "Ancona", "Bari",46),
-                    ( "Ancona", "Bologna",21),
-                    ( "Ancona", "Perugia",16),
-                    ( "Bari", "Roma",45),
-                    ( "Bologna", "Firenze",10),
-                    ( "Bologna", "Milano",21),
-                    ( "Firenze", "Genova",22),
-                    ( "Firenze", "Perugia",15),
-                    ( "Firenze", "Pisa",9),
-                    ( "Firenze", "Roma",28),
-                    ( "Genova", "Milano",14),
-                    ( "Genova", "Pisa",16),
-                    ( "Milano", "Torino",14),
-                    ( "Napoli", "Roma",22),
-                    ( "Perugia", "Roma",17),
-                    ( "Pisa", "Roma",37),
-            };
-
             int cost = 0;
             String[] array = path.ToArray();
 
@@ -283,29 +271,6 @@ namespace Artificial_Intelligence
 
         public static int findCost(string from, string to)
         {
-            List<(String, String, int)> tmp = new List<(String, String, int)>
-            {
-                    ( "Aquila", "Ancona",19),
-                    ( "Aquila", "Perugia",17),
-                    ( "Aquila", "Roma",11),
-                    ( "Ancona", "Bari",46),
-                    ( "Ancona", "Bologna",21),
-                    ( "Ancona", "Perugia",16),
-                    ( "Bari", "Roma",45),
-                    ( "Bologna", "Firenze",10),
-                    ( "Bologna", "Milano",21),
-                    ( "Firenze", "Genova",22),
-                    ( "Firenze", "Perugia",15),
-                    ( "Firenze", "Pisa",9),
-                    ( "Firenze", "Roma",28),
-                    ( "Genova", "Milano",14),
-                    ( "Genova", "Pisa",16),
-                    ( "Milano", "Torino",14),
-                    ( "Napoli", "Roma",22),
-                    ( "Perugia", "Roma",17),
-                    ( "Pisa", "Roma",37),
-            };
-
             return (tmp.Find(p =>
                 (p.Item1.Equals(from) && p.Item2.Equals(to))
                 || (p.Item2.Equals(from) && p.Item1.Equals(to))))
