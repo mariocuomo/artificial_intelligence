@@ -169,7 +169,7 @@ namespace Artificial_Intelligence
         }
         /*
             DFS, Depth First Search Recursive Mode
-            This method is exposed, that is, it represents the method called from outside 
+            Called from Depth First Search Recursive Mode
         */
         static public List<String> DFS(Graph<String> graph, String node, TreeNode<String> tree)
         {
@@ -205,6 +205,68 @@ namespace Artificial_Intelligence
 
             return null;
         }
+
+        /*
+            DFS, Depth First Search Limited
+            It searches to a maximum depth x 
+            Maximum x cities visited 
+        */
+        static public List<String> searchPath_DFS_Limited(Graph<String> graph)
+        {
+            int max_depth = 6;
+            Stack<TreeNode<String>> fringe = new Stack<TreeNode<string>>();
+            TreeNode<String> tree = new TreeNode<String>(start);
+
+            foreach (String item in graph.getNeighborhoods(start))
+            {
+                TreeNode<String> tmp = new TreeNode<String>(item);
+                tmp.Parent = tree;
+                fringe.Push(tmp);
+            }
+
+            Stack<TreeNode<String>> tmp_fringe = new Stack<TreeNode<String>>(fringe.Reverse());
+            fringe.Clear();
+
+            while (tmp_fringe.Count != 0)
+                fringe.Push(tmp_fringe.Pop());
+
+            while (fringe.Count != 0)
+            {
+                TreeNode<String> node = fringe.Pop();
+                if (getDepth(node) < max_depth) {
+                    if (node.value.Equals(goal))
+                        return buildPath(node);
+
+                    List<String> lst = graph.getNeighborhoods(node.value);
+                    lst.Reverse();
+
+                    foreach (String item in lst)
+                    {
+                        //delete loop
+                        bool isInThePathToRoot = false;
+                        TreeNode<String> tmp = node;
+                        while (tmp != null && !isInThePathToRoot)
+                        {
+                            if (tmp.value.Equals(item))
+                                isInThePathToRoot = true;
+                            tmp = tmp.Parent;
+                        }
+
+                        if (!isInThePathToRoot)
+                        {
+                            TreeNode<String> _tmp = new TreeNode<String>(item);
+                            _tmp.Parent = node;
+                            fringe.Push(_tmp);
+                        }
+                    }
+                }
+
+            }
+
+
+            return null;
+        }
+
 
         /*
             UCS, Uniform Cost Search
@@ -421,6 +483,19 @@ namespace Artificial_Intelligence
         public static int getdistanceToNaples(string from)
         {
             return (distanceTNaples.Find(p => p.Item1.Equals(from))).Item2;
+        }
+
+        public static int getDepth(TreeNode<String> node)
+        {
+            TreeNode<String> tmp = node;
+            int x = 0;
+            while (node != null)
+            {
+                node = node.Parent;
+                x = x + 1;
+            }
+
+            return x;
         }
     }
 }

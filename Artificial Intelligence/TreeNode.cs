@@ -56,6 +56,5 @@ namespace Artificial_Intelligence
 
                 return ls;
             }
-
     }
 }
