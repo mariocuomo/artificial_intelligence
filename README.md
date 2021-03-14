@@ -46,6 +46,7 @@ These algorithms don't have any information about the problem and for this reaso
 Currently implemented:
 - [x] Breadth First Search
 - [x] Depth First Search
+- [x] Limited Depth First Search
 - [x] Uniform Cost Search
 
 Waiting for refactoring:
