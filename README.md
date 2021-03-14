@@ -50,14 +50,16 @@ Currently implemented:
 - [x] Iterative Limited Depth First Search
 - [x] Uniform Cost Search
 
-Waiting for refactoring:
-- [ ] Breadth First Search & ~~Depth First Search~~- in recursive mode
-
 ## Heuristic Search Algorithm
 Heuristic search is a form of search that exploits knowledge about a problem to find solutions more efficiently.<br>
 Currently implemented:
 - [x] Greedy Search
 - [x] A* search
+
+---
+
+Waiting for refactoring:
+- [ ] Breadth First Search & ~~Depth First Search~~- in recursive mode
 
 
 
