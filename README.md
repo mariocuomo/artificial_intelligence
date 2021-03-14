@@ -58,7 +58,7 @@ Currently implemented:
 
 ---
 
-Waiting for refactoring:
+#### Waiting for refactoring:
 - [ ] Breadth First Search & ~~Depth First Search~~- in recursive mode
 
 
