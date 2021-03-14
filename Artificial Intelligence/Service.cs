@@ -206,7 +206,10 @@ namespace Artificial_Intelligence
             return null;
         }
 
-
+        /*
+            UCS, Uniform Cost Search
+            In the fringe it expands the node with the min cost (cost of the path from the start to the node)
+        */
         static public List<String> searchPathUCS(Graph<String> graph)
         {
             List<TreeNode<String>> fringe = new List<TreeNode<string>>();
@@ -261,6 +264,11 @@ namespace Artificial_Intelligence
             return null;
         }
 
+
+        /*
+            Greedy Search
+            It expands the node with the min cost expressed in distance as crow flies to the goal
+        */
         static public List<String> searchPath_Greedy(Graph<String> graph)
         {
             TreeNode<String> tree = new TreeNode<String>(start);
@@ -302,6 +310,11 @@ namespace Artificial_Intelligence
             return null;
         }
 
+        /*
+            A*
+            It expands the node with the min heuristic value
+            Heuristic value = distance as crow flies state-goal + cost of the path from the start to the node
+        */
         static public List<String> searchPath_AStar(Graph<String> graph)
         {
             List<TreeNode<String>> fringe = new List<TreeNode<string>>();
@@ -357,7 +370,9 @@ namespace Artificial_Intelligence
         }
 
 
-
+        /*
+            return the path from start to goal expressed as list of string - name of city
+        */
         static List<String> buildPath(TreeNode<String> goal)
         {
             List<String> tmp = new List<string>();
@@ -371,7 +386,9 @@ namespace Artificial_Intelligence
             return tmp;
         }
 
-        /*return the cost of a path*/
+        /*
+            return the cost of a path
+        */
         public static int getCost(List<String> path)
         {
             int cost = 0;
@@ -387,7 +404,9 @@ namespace Artificial_Intelligence
             return cost;
         }
 
-        /*return the cost from a city to other one*/
+        /*
+            return the cost from a city to other one
+        */
         public static int findCost(string from, string to)
         {
             return (distancecityToCity.Find(p =>
@@ -396,7 +415,9 @@ namespace Artificial_Intelligence
                 .Item3;
         }
 
-        /*return the cost from a city to Naples*/
+        /*
+            return the cost from a city to Naples
+        */
         public static int getdistanceToNaples(string from)
         {
             return (distanceTNaples.Find(p => p.Item1.Equals(from))).Item2;
