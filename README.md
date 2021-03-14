@@ -23,4 +23,4 @@ Waiting for refactoring:
 Heuristic search is a form of search that exploits knowledge about a problem to find solutions more efficiently.<br>
 Currently implemented:
 - [x] Greedy Search
-- [ ] A* search
+- [x] A* search
