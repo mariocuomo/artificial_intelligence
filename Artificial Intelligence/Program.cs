@@ -54,6 +54,17 @@ namespace Artificial_Intelligence
                 printPath(path);
             }
 
+            Console.WriteLine("Search path using Depth Iterative Limited Search...");
+
+            path = Service.searchPath_DFS_Itertive_Limited(graph);
+            if (path == null)
+                Console.WriteLine("No path available");
+            else
+            {
+                Console.WriteLine("Path available");
+                printPath(path);
+            }
+
             Console.WriteLine("Search path using Uniform Cost Search...");
 
             path = Service.searchPathUCS(graph);

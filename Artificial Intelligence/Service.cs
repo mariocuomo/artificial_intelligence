@@ -267,6 +267,73 @@ namespace Artificial_Intelligence
             return null;
         }
 
+        /*
+            DFS, Depth First Search Limited Iterative
+            It searches to a maximum depth x 
+            Maximum x cities visited 
+        */
+        static public List<String> searchPath_DFS_Itertive_Limited(Graph<String> graph)
+        {
+            int max_depth = 6;
+            int i = 0;
+            bool find = false;
+            while(i<max_depth && !find) {
+                i++;
+                Console.WriteLine("Searching with max depth="+i+"...");
+                Stack<TreeNode<String>> fringe = new Stack<TreeNode<string>>();
+                TreeNode<String> tree = new TreeNode<String>(start);
+
+                foreach (String item in graph.getNeighborhoods(start))
+                {
+                    TreeNode<String> tmp = new TreeNode<String>(item);
+                    tmp.Parent = tree;
+                    fringe.Push(tmp);
+                }
+
+                Stack<TreeNode<String>> tmp_fringe = new Stack<TreeNode<String>>(fringe.Reverse());
+                fringe.Clear();
+
+                while (tmp_fringe.Count != 0)
+                    fringe.Push(tmp_fringe.Pop());
+
+                while (fringe.Count != 0)
+                {
+                    TreeNode<String> node = fringe.Pop();
+                    if (getDepth(node) < i)
+                    {
+                        if (node.value.Equals(goal))
+                            return buildPath(node);
+
+                        List<String> lst = graph.getNeighborhoods(node.value);
+                        lst.Reverse();
+
+                        foreach (String item in lst)
+                        {
+                            //delete loop
+                            bool isInThePathToRoot = false;
+                            TreeNode<String> tmp = node;
+                            while (tmp != null && !isInThePathToRoot)
+                            {
+                                if (tmp.value.Equals(item))
+                                    isInThePathToRoot = true;
+                                tmp = tmp.Parent;
+                            }
+
+                            if (!isInThePathToRoot)
+                            {
+                                TreeNode<String> _tmp = new TreeNode<String>(item);
+                                _tmp.Parent = node;
+                                fringe.Push(_tmp);
+                            }
+                        }
+                    }
+                }
+
+            }
+
+
+            return null;
+        }
 
         /*
             UCS, Uniform Cost Search
