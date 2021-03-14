@@ -7,7 +7,7 @@ namespace Artificial_Intelligence
 {
     static class Service
     {
-        static List<(String, String, int)> distancecityToCity = new List<(String, String, int)>
+        static readonly List<(String, String, int)> distancecityToCity = new List<(String, String, int)>
             {
                     ( "Aquila", "Ancona",19),
                     ( "Aquila", "Perugia",17),
@@ -30,7 +30,7 @@ namespace Artificial_Intelligence
                     ( "Pisa", "Roma",37),
             };
         
-        static List<(String, int)> distanceTNaples = new List<(String, int)>
+        static readonly List<(String, int)> distanceTNaples = new List<(String, int)>
             {
                     ( "Aquila",18),
                     ( "Ancona",31),
@@ -45,19 +45,21 @@ namespace Artificial_Intelligence
                     ( "Torino",71),
             };
 
-
+        static readonly String start = "Milano";
+        static readonly String goal = "Napoli";
 
         static public List<(String, String, int)> ListGraph()
         {
             return distancecityToCity;
         }
 
+
+        /*
+            BFS, Breadth First Search
+            This algorithm visits the graph by first observing the nodes at a distance of 1, then at a distance of 2 and so on from the starting node.
+        */
         static public List<String> searchPath_BFS(Graph<String> graph)
         {
-            //Start from Milan to Naples
-            String start = "Milano";
-            String goal = "Napoli";
-
             Queue<TreeNode<String>> fringe = new Queue<TreeNode<string>>();
             TreeNode<String> tree = new TreeNode<String>(start);
 
@@ -98,12 +100,12 @@ namespace Artificial_Intelligence
             return null;
         }
 
+        /*
+            DFS, Depth First Search
+            This algorithm visits the graph in depth, i.e. from each node it continues the visit until there are no more unvisited nodes.  
+        */
         static public List<String> searchPath_DFS(Graph<String> graph)
         {
-            //Start from Milan to Naples
-            String start = "Milano";
-            String goal = "Napoli";
-
             Stack<TreeNode<String>> fringe = new Stack<TreeNode<string>>();
             TreeNode<String> tree = new TreeNode<String>(start);
 
@@ -124,7 +126,7 @@ namespace Artificial_Intelligence
             {
                 TreeNode<String> node = fringe.Pop();
                 
-                if(node.value.Equals("Napoli"))
+                if(node.value.Equals(goal))
                     return buildPath(node);
 
                 List<String> lst = graph.getNeighborhoods(node.value);
@@ -156,20 +158,57 @@ namespace Artificial_Intelligence
             return null;
         }
 
-
+        /*
+            DFS, Depth First Search Recursive Mode
+            This method is exposed, that is, it represents the method called from outside 
+        */
         static public List<String> searchPath_DFS_Recursive(Graph<String> graph)
         {
-            TreeNode<String> tree = new TreeNode<String>("Milano");
-            return DFS(graph, "Milano", tree);
+            TreeNode<String> tree = new TreeNode<String>(goal);
+            return DFS(graph, start, tree);
         }
+        /*
+            DFS, Depth First Search Recursive Mode
+            This method is exposed, that is, it represents the method called from outside 
+        */
+        static public List<String> DFS(Graph<String> graph, String node, TreeNode<String> tree)
+        {
+            foreach (String item in graph.getNeighborhoods(node))
+            {
+                if (item == goal)
+                {
+                    TreeNode<String> _tmp = new TreeNode<String>(item);
+                    _tmp.Parent = tree;
+                    return buildPath(_tmp);
+                }
+
+                bool isInThePathToRoot = false;
+                TreeNode<String> tmp = new TreeNode<string>();
+                tmp = tree;
+                while (tmp != null && !isInThePathToRoot)
+                {
+                    if (tmp.value.Equals(item))
+                        isInThePathToRoot = true;
+                    tmp = tmp.Parent;
+                }
+
+                if (!isInThePathToRoot)
+                {
+                    TreeNode<String> _tmp = new TreeNode<String>(item);
+                    _tmp.Parent = tree;
+                    List<String> path = DFS(graph, item, _tmp);
+                    if (path != null)
+                        return path;
+                }
+            }
+
+
+            return null;
+        }
+
 
         static public List<String> searchPathUCS(Graph<String> graph)
         {
-            //Start from Milan to Naples
-            String start = "Milano";
-            String goal = "Napoli";
-
-
             List<TreeNode<String>> fringe = new List<TreeNode<string>>();
             TreeNode<String> tree = new TreeNode<String>(start);
 
@@ -177,7 +216,7 @@ namespace Artificial_Intelligence
             {
                 TreeNode<String> tmp = new TreeNode<String>(item);
                 tmp.Parent = tree;
-                tmp.cost = findCost("Milano", item);
+                tmp.cost = findCost(start, item);
                 fringe.Add(tmp);
             }
 
@@ -224,14 +263,10 @@ namespace Artificial_Intelligence
 
         static public List<String> searchPath_Greedy(Graph<String> graph)
         {
-            //Start from Milan to Naples
-            String start = "Milano";
-            String goal = "Napoli";
-
             TreeNode<String> tree = new TreeNode<String>(start);
             
             List<String> visited = new List<string>();
-            visited.Add("Milano");
+            visited.Add(start);
 
             String min="";
             String node = start;
@@ -242,9 +277,9 @@ namespace Artificial_Intelligence
                 {
                     if(!visited.Contains(item))
                     {
-                        if (item == "Napoli")
+                        if (item == goal)
                         {
-                            visited.Add("Napoli");
+                            visited.Add(goal);
                             return visited;
                         }
 
@@ -269,11 +304,6 @@ namespace Artificial_Intelligence
 
         static public List<String> searchPath_AStar(Graph<String> graph)
         {
-            //Start from Milan to Naples
-            String start = "Milano";
-            String goal = "Napoli";
-
-
             List<TreeNode<String>> fringe = new List<TreeNode<string>>();
             TreeNode<String> tree = new TreeNode<String>(start);
 
@@ -281,7 +311,7 @@ namespace Artificial_Intelligence
             {
                 TreeNode<String> tmp = new TreeNode<String>(item);
                 tmp.Parent = tree;
-                tmp.cost = findCost("Milano", item)+getdistanceToNaples(item);
+                tmp.cost = findCost(start, item)+getdistanceToNaples(item);
                 fringe.Add(tmp);
             }
 
@@ -326,40 +356,6 @@ namespace Artificial_Intelligence
             return null;
         }
 
-        static public List<String> DFS(Graph<String> graph, String node, TreeNode<String> tree)
-        {
-            foreach (String item in graph.getNeighborhoods(node))
-            {
-                if (item == "Napoli")
-                {
-                    TreeNode<String> _tmp = new TreeNode<String>(item);
-                    _tmp.Parent = tree;
-                    return buildPath(_tmp);
-                }
-
-                bool isInThePathToRoot = false;
-                TreeNode<String> tmp = new TreeNode<string>();
-                tmp = tree;
-                while (tmp != null && !isInThePathToRoot)
-                {
-                    if (tmp.value.Equals(item))
-                        isInThePathToRoot = true;
-                    tmp = tmp.Parent;
-                }
-
-                if (!isInThePathToRoot)
-                {
-                    TreeNode<String> _tmp = new TreeNode<String>(item);
-                    _tmp.Parent = tree;
-                    List<String> path = DFS(graph, item, _tmp);
-                    if (path != null)
-                        return path;
-                }
-            }
-
-
-            return null;
-        }
 
 
         static List<String> buildPath(TreeNode<String> goal)
