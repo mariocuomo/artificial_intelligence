@@ -1,6 +1,6 @@
 # Artificial Intelligence
 
-This Repository is dedicated to different test and artificial intelligence algorithms inspired by the Artificial Intelligence course at Roma Tre University.
+This Repository is dedicated to different test and Artificial Intelligence algorithms inspired by the Artificial Intelligence course at Roma Tre University.
 <br>The project is an App Console(.NET Core) developed using C#.
 
 ## Toy Problem
