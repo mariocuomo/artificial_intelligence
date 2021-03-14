@@ -267,6 +267,64 @@ namespace Artificial_Intelligence
             return null;
         }
 
+        static public List<String> searchPath_AStar(Graph<String> graph)
+        {
+            //Start from Milan to Naples
+            String start = "Milano";
+            String goal = "Napoli";
+
+
+            List<TreeNode<String>> fringe = new List<TreeNode<string>>();
+            TreeNode<String> tree = new TreeNode<String>(start);
+
+            foreach (String item in graph.getNeighborhoods(start))
+            {
+                TreeNode<String> tmp = new TreeNode<String>(item);
+                tmp.Parent = tree;
+                tmp.cost = findCost("Milano", item)+getdistanceToNaples(item);
+                fringe.Add(tmp);
+            }
+
+            while (fringe.Count != 0)
+            {
+                int min_cost = 0;
+                foreach (TreeNode<String> item in fringe)
+                {
+                    if ((item.cost)+getdistanceToNaples(item.value) < fringe.ElementAt(min_cost).cost+getdistanceToNaples(fringe.ElementAt(min_cost).value))
+                        min_cost = fringe.IndexOf(item);
+                }
+
+                TreeNode<String> node = fringe.ElementAt(min_cost);
+                fringe.RemoveAt(min_cost);
+
+                if (node.value.Equals(goal))
+                    return buildPath(node);
+
+                foreach (String item in graph.getNeighborhoods(node.value))
+                {
+                    //delete loop
+                    bool isInThePathToRoot = false;
+                    TreeNode<String> tmp = node;
+                    while (tmp != null && !isInThePathToRoot)
+                    {
+                        if (tmp.value.Equals(item))
+                            isInThePathToRoot = true;
+                        tmp = tmp.Parent;
+                    }
+
+                    if (!isInThePathToRoot)
+                    {
+                        TreeNode<String> _tmp = new TreeNode<String>(item);
+                        _tmp.Parent = node;
+                        _tmp.cost = findCost(node.value, item) + _tmp.Parent.cost;
+                        fringe.Add(_tmp);
+                    }
+
+                }
+            }
+
+            return null;
+        }
 
         static public List<String> DFS(Graph<String> graph, String node, TreeNode<String> tree)
         {

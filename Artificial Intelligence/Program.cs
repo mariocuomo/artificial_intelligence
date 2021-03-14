@@ -64,6 +64,17 @@ namespace Artificial_Intelligence
                 Console.WriteLine("Path available");
                 printPath(path);
             }
+
+            Console.WriteLine("Search path using A*...");
+
+            path = Service.searchPath_AStar(graph);
+            if (path == null)
+                Console.WriteLine("No path available");
+            else
+            {
+                Console.WriteLine("Path available");
+                printPath(path);
+            }
         }
 
         static void printPath(List<String> path)
