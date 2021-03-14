@@ -22,7 +22,7 @@ I have a map of Italy that represents the operators and their costs associated: 
 <b>RM</b> | 11 |  | 45 | |28 | | |22 |17 |37 ||
 <b>TO</b> |  |  |  | | | |14 | | | ||
 
-. | CROW FLIES TO NA 
+. | DISTANCE AS CROW FLIES TO NA 
 --- | --- 
 <b>AQ</b> | 18
 <b>AN</b> | 31
