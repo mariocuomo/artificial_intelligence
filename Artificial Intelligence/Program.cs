@@ -97,6 +97,7 @@ namespace Artificial_Intelligence
                 Console.WriteLine("Path available");
                 printPath(path);
             }
+
         }
 
         static void printPath(List<String> path)

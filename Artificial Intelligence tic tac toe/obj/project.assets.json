@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence\\Artificial Intelligence search path.csproj",
-      "projectName": "Artificial Intelligence search path",
-      "projectPath": "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence\\Artificial Intelligence search path.csproj",
+      "projectUniqueName": "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence tic tac toe\\Artificial Intelligence tic tac toe.csproj",
+      "projectName": "Artificial Intelligence tic tac toe",
+      "projectPath": "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence tic tac toe\\Artificial Intelligence tic tac toe.csproj",
       "packagesPath": "C:\\Users\\cuomo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence\\obj\\",
+      "outputPath": "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence tic tac toe\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
