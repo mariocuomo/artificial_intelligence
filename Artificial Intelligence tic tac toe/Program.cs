@@ -10,6 +10,8 @@ namespace Artificial_Intelligence_tic_tac_toe
         {
             String playerOne="";
             String playerTwo = "";
+            int count_playerOne = 0;
+            int count_playerTwo = 0;
 
             Console.WriteLine("Tic Tac Toe game developed using Min Max algorithm");
 
@@ -32,6 +34,7 @@ namespace Artificial_Intelligence_tic_tac_toe
             bool _isFinished = false;
             Console.WriteLine("Waiting for setup...");
 
+            
             while (!_isFinished)
             {
                 String suggestion = calculateSuggestion(matrix, player);
@@ -52,8 +55,48 @@ namespace Artificial_Intelligence_tic_tac_toe
                 updateMatrix(user_step, matrix, player);
                 printMatrix(matrix);
 
-                if (freePosition(matrix) == 0 || isFinished(matrix))
+                (bool, int) l = isFinished(matrix);
+
+                //no winner
+                if (l.Item1) {
                     _isFinished = true;
+
+                    if (l.Item2 == 1) { 
+                        count_playerOne++;
+                        Console.WriteLine("Great job {0}",playerOne);
+                    }
+                    if (l.Item2 == -1){
+                        count_playerTwo++;
+                        Console.WriteLine("Great job {0}", playerTwo);
+                    }
+                    if (l.Item2 == 0)
+                    {
+                        Console.WriteLine("No winners!");
+                    }
+
+                    Console.WriteLine("{0,5} : {1,5}\n{2,5} : {3,5}", playerOne, count_playerOne, playerTwo, count_playerTwo);
+                    String answer = "";
+                    while (!answer.Equals("y") && !answer.Equals("Y") && !answer.Equals("n") && !answer.Equals("N"))
+                    {
+                        Console.WriteLine("Another game?[y]\\[n]  ");
+                        answer = Console.ReadLine();
+                    }
+                    if(answer.Equals("y") || !answer.Equals("Y"))
+                    {
+                        _isFinished = false;
+                        clearMatrix(matrix);
+                        printMatrix(matrix);
+                        Console.WriteLine("Waiting for setup...&...cleaning matrix");
+                        player *= (-1);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Thank you!\n");
+                        Console.ReadLine();
+                    }
+
+
+                }
 
                 player *= (-1);
             }
@@ -63,7 +106,7 @@ namespace Artificial_Intelligence_tic_tac_toe
 
         }
 
-        static bool isFinished(int[,] matrix)
+        static (bool, int) isFinished(int[,] matrix)
         {
             int i = 0;
             int j = 0;
@@ -71,24 +114,24 @@ namespace Artificial_Intelligence_tic_tac_toe
             //horizontal tris
             for (; i < 3; i++)
                 if (matrix[i, j] == matrix[i, j + 1] && matrix[i, j] == matrix[i, j + 2] && matrix[i, j]!=0)
-                    return true;
+                    return (true, matrix[i, j]);
 
             //vertical tris
             i = 0;
             for (j = 0; j < 3; j++)
                 if (matrix[i, j] == matrix[i + 1, j] && matrix[i, j] == matrix[i + 2, j] && matrix[i, j] != 0)
-                    return true;
+                    return (true, matrix[i, j]);
 
             //diagonal tris Left->
             if (matrix[0, 0] == matrix[1, 1] && matrix[0, 0] == matrix[2, 2] && matrix[0, 0] != 0)
-                return true;
+                return (true, matrix[1, 1]);
 
             //diagonal tris Right->
             if (matrix[0, 2] == matrix[1, 1] && matrix[0, 2] == matrix[2, 0] && matrix[0, 2] != 0)
-                return true;
+                return (true, matrix[1, 1]);
 
             //no winner
-            return false;
+            return (freePosition(matrix)==0,0);
         }
 
         static void updateMatrix(String user_step, int[,] matrix, int value)
@@ -183,7 +226,7 @@ namespace Artificial_Intelligence_tic_tac_toe
             {
                 TreeNode tmp_node = fringe.Dequeue();
                 //if it is not a final state
-                if (!isFinished(tmp_node.matrix)) { 
+                if (!isFinished(tmp_node.matrix).Item1) { 
                     //take the branch
                     for (int i = 0; i < tmp_node.branching_f; i++)
                     {
