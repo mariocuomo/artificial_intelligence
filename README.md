@@ -56,13 +56,13 @@ Currently implemented:
 - [x] Greedy Search
 - [x] A* search
 
----
+
 
 ## Toy Problem 2
 Using MinMax algorithm to suggest the best choice in the tic-tac-toe game at each step.
 The algorithm is for perfect decisions, i.e. all possible combinations are expanded
 
-
+---
 
 #### Waiting for refactoring:
 - [ ] Breadth First Search & ~~Depth First Search~~- in recursive mode
