@@ -128,12 +128,29 @@ namespace Artificial_Intelligence_tic_tac_toe
         static void printMatrix(int[,] matrix)
         {
 
-            Console.WriteLine("  {0,-5} {1,-5} {2,-5}", "A", "B", "C");
+            Console.WriteLine("\t{0}\t{1}\t{2}", "A", "B", "C\n");
             int i = 0;
             int j = 0;
             for (; i < 3; i++) {
                 Console.Write((char)(97 + i)+" ");
-                Console.Write("{0,-5} {1,-5} {2,-5}", matrix[i, 0], matrix[i, 1], matrix[i, 2]);
+                int x = matrix[i, 0];
+                if (x == 1)
+                    x = 88;
+                if (x == -1)
+                    x = 79;
+
+                int y = matrix[i, 1];
+                if (y == 1)
+                    y = 88;
+                if (y == -1)
+                    y = 79;
+
+                int z = matrix[i, 2];
+                if (z == 1)
+                    z = 88;
+                if (z == -1)
+                    z = 79;
+                Console.Write("\t{0}\t{1}\t{2}", (char)x, (char)y, (char)z);
                 Console.WriteLine();
             }
             Console.WriteLine();
