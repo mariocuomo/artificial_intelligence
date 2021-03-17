@@ -1,4 +1,5 @@
 # Artificial Intelligence
+<p align="center"><img alt="Artificial_Intelligence" src="https://github.com/mariocuomo/artificial_intelligence/blob/main/AI_chess.jpg" /></p>
 
 This Repository is dedicated to different test and Artificial Intelligence algorithms inspired by the Artificial Intelligence course at Roma Tre University.
 <br>The project is an App Console(.NET Core) developed using C#.
