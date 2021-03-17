@@ -81,7 +81,7 @@ namespace Artificial_Intelligence_tic_tac_toe
                         Console.WriteLine("Another game?[y]\\[n]  ");
                         answer = Console.ReadLine();
                     }
-                    if(answer.Equals("y") || !answer.Equals("Y"))
+                    if(answer.Equals("y") || answer.Equals("Y"))
                     {
                         _isFinished = false;
                         clearMatrix(matrix);
