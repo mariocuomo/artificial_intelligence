@@ -288,6 +288,10 @@ namespace Artificial_Intelligence_tic_tac_toe
                 root.eval = l.Item2;
 
             }
+            if (root.certain_defeat(player))
+                return "I'm sorry ... but whatever move you make, you can't win. At most the game ends in a draw";
+            if (root.certain_victory(player))
+                return "Congratulations, you will surely win! ";
             return root.step;
 
 

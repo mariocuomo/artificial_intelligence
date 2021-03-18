@@ -16,11 +16,11 @@ namespace Artificial_Intelligence_tic_tac_toe
         public String step;
         public int branching_f;
         public bool visited=false;
+
         public TreeNode(int[,] matrix)
         {
             this.Parent = null;
             this.matrix = matrix;
-
         }
 
         public TreeNode AddChild(TreeNode value)
@@ -58,7 +58,7 @@ namespace Artificial_Intelligence_tic_tac_toe
 
         public (String, int) getMinFromChildren()
         {
-            String step = "";
+            String step="";
             int min = int.MaxValue;
             foreach (TreeNode tree in this.children)
             {
@@ -84,6 +84,31 @@ namespace Artificial_Intelligence_tic_tac_toe
             }
             return (step,max);
         }
+
+        public bool certain_defeat(int i)
+        {
+            bool tmp = true;
+            int _i = (-1) * i;
+
+            foreach (TreeNode tree in this.children)
+            {
+                tmp = tmp && tree.eval == _i;
+            }
+            
+            return tmp;
+        }
+
+        public bool certain_victory(int i)
+        {
+            bool tmp = true;
+            foreach (TreeNode tree in this.children)
+            {
+                tmp = tmp && tree.eval == i;
+            }
+
+            return tmp;
+        }
+
 
         internal int evaluate()
         {
