@@ -4,6 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Artificial_Intelligence_tic_tac_toe</RootNamespace>
+    <PackageId>Artificial_Intelligence_tic_tac_toe</PackageId>
   </PropertyGroup>
 
 </Project>

@@ -172,7 +172,6 @@ namespace Artificial_Intelligence_tic_tac_toe
 
             Console.WriteLine("\t{0}\t{1}\t{2}", "A", "B", "C\n");
             int i = 0;
-            int j = 0;
             for (; i < 3; i++) {
                 Console.Write((char)(97 + i)+" ");
                 int x = matrix[i, 0];

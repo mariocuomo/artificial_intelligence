@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Artificial Intelligence tic tac toe/1.0.0": {
+        "runtime": {
+          "Artificial Intelligence tic tac toe.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Artificial Intelligence tic tac toe/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

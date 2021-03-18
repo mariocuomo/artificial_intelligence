@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Artificial_Intelligence_tic_tac_toe</id>
+    <version>1.0.0</version>
+    <authors>Artificial Intelligence tic tac toe</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\cuomo\Desktop\Magistrale\Primo anno\Secondo Semestre\Intelligenza artificiale\artificial_intelligence\Artificial Intelligence tic tac toe\bin\Debug\netcoreapp3.1\Artificial Intelligence tic tac toe.runtimeconfig.json" target="lib\netcoreapp3.1\Artificial Intelligence tic tac toe.runtimeconfig.json" />
+    <file src="C:\Users\cuomo\Desktop\Magistrale\Primo anno\Secondo Semestre\Intelligenza artificiale\artificial_intelligence\Artificial Intelligence tic tac toe\bin\Debug\netcoreapp3.1\Artificial Intelligence tic tac toe.dll" target="lib\netcoreapp3.1\Artificial Intelligence tic tac toe.dll" />
+  </files>
+</package>
