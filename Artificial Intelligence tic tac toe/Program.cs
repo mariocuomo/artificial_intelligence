@@ -49,7 +49,7 @@ namespace Artificial_Intelligence_tic_tac_toe
                 {
                     Console.WriteLine("Invalid position!" );
                     Console.WriteLine("Suggestion for {0} : {1}", player==1 ? playerOne : playerTwo, suggestion);
-                    Console.WriteLine("chance to win: {0:N2}%, lose{1:N2}%, game in a draw: {2:N2}% ", pr.Item1, pr.Item2, pr.Item3);
+                    Console.WriteLine("chance to win using random choise: {0:N2}%, lose{1:N2}%, game in a draw: {2:N2}% ", pr.Item1*100, pr.Item2*100, pr.Item3* 100);
 
                     user_step = Console.ReadLine();
                 }
@@ -308,9 +308,9 @@ namespace Artificial_Intelligence_tic_tac_toe
             int front_len = frontier.Count;
             
             if (root.certain_defeat(player))
-                return ("I'm sorry... but whatever move you make, you can't win. At most the game ends in a draw", (tripla.Item1 / front_len, tripla.Item2 / front_len, tripla.Item3 / front_len));
+                return ("I'm sorry... but whatever choise you make, you can't win if the opponent makes the best move. At most the game ends in a draw", (tripla.Item1 / front_len, tripla.Item2 / front_len, tripla.Item3 / front_len));
             if (root.certain_victory(player))
-                return ("Congratulations, you will surely win!", (tripla.Item1 / front_len, tripla.Item2 / front_len, tripla.Item3 / front_len));
+                return ("Congratulations, you will surely win if you make the best move!", (tripla.Item1 / front_len, tripla.Item2 / front_len, tripla.Item3 / front_len));
             return (root.step, (tripla.Item1 / front_len, tripla.Item2 / front_len, tripla.Item3 / front_len));
 
 
