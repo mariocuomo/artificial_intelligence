@@ -101,9 +101,6 @@ namespace Artificial_Intelligence_tic_tac_toe
                 player *= (-1);
             }
 
-
-
-
         }
 
         static (bool, int) isFinished(int[,] matrix)
@@ -256,22 +253,23 @@ namespace Artificial_Intelligence_tic_tac_toe
             
             foreach (TreeNode node in frontier)
             {
+
+                if (!node.visited){
                 TreeNode tmpscan = node;
                 while (tmpscan.Parent != null)
                 {
                     tmpscan = tmpscan.Parent;
-
                     if (tmpscan.player == 1) {
                         (String, int) l = tmpscan.getMaxFromChildren();
-                        //tmpscan.step = l.Item1;
                         tmpscan.eval = l.Item2;
 
                     }
                     else
                     {
                         (String, int) l = tmpscan.getMinFromChildren();
-                        //tmpscan.step = l.Item1;
                         tmpscan.eval = l.Item2;
+                    }
+                    tmpscan.visited = true;
                     }
                 }
             }

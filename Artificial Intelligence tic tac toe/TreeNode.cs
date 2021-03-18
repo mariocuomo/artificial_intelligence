@@ -15,7 +15,7 @@ namespace Artificial_Intelligence_tic_tac_toe
         public int[,] matrix = new int[3, 3];
         public String step;
         public int branching_f;
-
+        public bool visited=false;
         public TreeNode(int[,] matrix)
         {
             this.Parent = null;
