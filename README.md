@@ -68,7 +68,6 @@ The algorithm is for perfect decisions, i.e. all possible combinations are expan
 This folder is dedicated to different Python test.<br>
 Currently it contains files not related to programming for Artificial Intelligence. 
 
-
-
+<p align="center"><img alt="Artificial_Intelligence" src="https://github.com/mariocuomo/artificial_intelligence/blob/main/python_logo.png" width="150"/></p>
 
 
