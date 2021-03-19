@@ -4,7 +4,7 @@
 This Repository is dedicated to different test and Artificial Intelligence algorithms inspired by the Artificial Intelligence course at Roma Tre University.
 <br>The project is an App Console(.NET Core) developed using C#.
 
-## Toy Problem 1
+## Search Path With Cost 
 I'm in <b>Milan - MI -</b> and I want to go to <b>Naples - NA</b>.<br>
 I have a map of Italy that represents the operators and their costs associated: the map indicates which cities are directly connected, together the relative cost of travel.
 
@@ -58,15 +58,14 @@ Currently implemented:
 - [x] A* search
 
 
-
-## Toy Problem 2
-Using MinMax algorithm to suggest the best choice in the tic-tac-toe game at each step.
+## Tic Tac Toe Game
+Using MinMax algorithm to suggest the best choice in the tic-tac-toe game at each step.<br>
 The algorithm is for perfect decisions, i.e. all possible combinations are expanded
 
----
+## Python Test
+This folder is dedicated to different Python test.<br>
+Currently it contains files not related to programming for Artificial Intelligence. 
 
-#### Waiting for refactoring:
-- [ ] Breadth First Search & ~~Depth First Search~~- in recursive mode
 
 
 
