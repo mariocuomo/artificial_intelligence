@@ -58,7 +58,7 @@ Currently implemented:
 - [x] A* search
 
 
-## Tic Tac Toe game
+## Tic Tac Toe Game
 Using MinMax algorithm to suggest the best choice in the tic-tac-toe game at each step.<br>
 The algorithm is for perfect decisions, i.e. all possible combinations are expanded
 
