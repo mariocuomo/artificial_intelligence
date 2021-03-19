@@ -61,10 +61,13 @@ Currently implemented:
 ## Tic Tac Toe Game
 Using MinMax algorithm to suggest the best choice in the tic-tac-toe game at each step.<br>
 The algorithm is for perfect decisions, i.e. all possible combinations are expanded
+<p align="center"><img alt="Artificial_Intelligence" src="https://github.com/mariocuomo/artificial_intelligence/blob/main/Tic Tac Toe.PNG" /></p>
+
 
 ## Python Test
 This folder is dedicated to different Python test.<br>
 Currently it contains files not related to programming for Artificial Intelligence. 
+
 
 
 
