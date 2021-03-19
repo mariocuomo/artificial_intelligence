@@ -41,7 +41,7 @@ namespace Artificial_Intelligence_tic_tac_toe
 
                 Console.WriteLine("Suggestion for {0} : {1}", player == 1 ? playerOne : playerTwo, suggestion.Item1);
                 (float, float, float) pr = suggestion.Item2;
-                Console.WriteLine("chance to win: {0:N2}%, lose: {1:N2}%, game in a draw: {2:N2}% ", pr.Item1, pr.Item2, pr.Item3);
+                Console.WriteLine("chance to win: {0:N2}%, lose: {1:N2}%, game in a draw: {2:N2}% ", pr.Item1 * 100, pr.Item2 * 100, pr.Item3 * 100);
                 Console.Write("{0} : ", player == 1 ? playerOne : playerTwo);
                 String user_step = Console.ReadLine();
                 while(!isStepValid(user_step, matrix))

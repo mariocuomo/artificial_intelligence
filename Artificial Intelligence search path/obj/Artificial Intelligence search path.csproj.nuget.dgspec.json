@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence\\Artificial Intelligence search path.csproj": {}
+    "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence search path\\Artificial Intelligence search path.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence\\Artificial Intelligence search path.csproj": {
+    "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence search path\\Artificial Intelligence search path.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence\\Artificial Intelligence search path.csproj",
+        "projectUniqueName": "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence search path\\Artificial Intelligence search path.csproj",
         "projectName": "Artificial Intelligence search path",
-        "projectPath": "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence\\Artificial Intelligence search path.csproj",
+        "projectPath": "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence search path\\Artificial Intelligence search path.csproj",
         "packagesPath": "C:\\Users\\cuomo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence\\obj\\",
+        "outputPath": "C:\\Users\\cuomo\\Desktop\\Magistrale\\Primo anno\\Secondo Semestre\\Intelligenza artificiale\\artificial_intelligence\\Artificial Intelligence search path\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
