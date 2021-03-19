@@ -59,7 +59,7 @@ Currently implemented:
 
 
 ## Tic Tac Toe game
-Using MinMax algorithm to suggest the best choice in the tic-tac-toe game at each step.
+Using MinMax algorithm to suggest the best choice in the tic-tac-toe game at each step.<br>
 The algorithm is for perfect decisions, i.e. all possible combinations are expanded
 
 ## Python Test
