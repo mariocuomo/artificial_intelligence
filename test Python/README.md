@@ -5,4 +5,4 @@ It contains different tests and several homeworks proposed during Artificial Int
 
 Subfolders:
 - My test
-- Print nodes during a BFS ([NewtworkX](https://github.com/networkx/networkx))
+- NewtworkX Update ([NewtworkX](https://github.com/networkx/networkx))
