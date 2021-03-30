@@ -5,6 +5,7 @@ It contains different tests and several homeworks proposed during Artificial Int
 
 
 Subfolders:
+* Homework
 * My test
 * NewtworkX Update ([NewtworkX](https://github.com/networkx/networkx))
   * Print nodes during Breadth First Search
