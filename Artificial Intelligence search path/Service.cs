@@ -423,13 +423,14 @@ namespace Artificial_Intelligence
                         if (getdistanceToNaples(item) < _min) { 
                             min = item;
                             _min = getdistanceToNaples(item);
-                            visited.Add(item);
                         }
                     }
                 }
                 
                 if (_min == int.MaxValue)
                     return null;
+
+                visited.Add(min);
 
                 TreeNode<String> tmp = new TreeNode<String>(min);
                 tmp.Parent = tree;
