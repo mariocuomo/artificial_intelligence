@@ -15,7 +15,7 @@ I have a map of Italy that represents the operators and their costs associated: 
 <b>BA</b> |  | 46 |  | | | | | | | |45|
 <b>BO</b> |  | 21 |  | |10 | |21 | | | | | 
 <b>FI</b> |  |  |  |10 | |22 | | |15 |9 |28| 
-<b>GE</b> |  |  |  | |22 |14 | | |16 | | | 
+<b>GE</b> |  |  |  | |22 | |14 | |16 | | | 
 <b>MI</b> |  |  |  |21 | |14 | | | | | |14
 <b>NA</b> |  |  |  | | | | | | | |22| 
 <b>PG</b> | 17 | 16 |  | |15 | | | | | |17| 
