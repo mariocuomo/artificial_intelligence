@@ -8,6 +8,8 @@ This Repository is dedicated to different test and Artificial Intelligence algor
 I'm in <b>Milan - MI -</b> and I want to go to <b>Naples - NA</b>.<br>
 I have a map of Italy that represents the operators and their costs associated: the map indicates which cities are directly connected, together the relative cost of travel.
 
+<img alt="cities" src="https://github.com/mariocuomo/artificial_intelligence/blob/main/graph_cities.png" /></p>
+
 . | AQ | AN | BA | BO | FI | GE | MI | NA | PG | PI | RM | TO
 --- | --- | --- | --- |--- |--- |--- |--- |--- | -- |--- | --- |---
 <b>AQ</b> |  | 19 |  | | | | | | 17  | | 11 |
