@@ -1,13 +1,13 @@
 # telco-churn-challenge [IT version]
 Analisi e addestramento di un modello per predire se un cliente di un operatore telefonico è propenso a lasciare la società oppure no :telephone_receiver:
 
-* [Telco-Customer-Churn.partial.csv](https://github.com/mariocuomo/telco-churn-challenge/blob/main/Telco-Customer-Churn.partial.csv)<br>
+* [Telco-Customer-Churn.partial.csv](https://github.com/mariocuomo/artificial_intelligence/blob/main/challenges/challenge2/Telco-Customer-Churn.partial.csv)<br>
 É il dataset (.csv) di partenza per l'apprendimento supervisionato.<br>
 
-* [preparazione.ipynb](https://github.com/mariocuomo/telco-churn-challenge/blob/main/preparazione.ipynb)<br>
+* [preparazione.ipynb](https://github.com/mariocuomo/artificial_intelligence/blob/main/challenges/challenge2/preparazione.ipynb)<br>
 É un Jupyter Notebook con l'obiettivo di caricare il dataset e splittarlo in due dataset (train.csv e test.csv) con un rapporto 4:1.<br>
 
-* [train.ipynb](https://github.com/mariocuomo/telco-churn-challenge/blob/main/train.ipynb)<br>
+* [train.ipynb](https://github.com/mariocuomo/artificial_intelligence/blob/main/challenges/challenge2/train.ipynb)<br>
 É un Jupyter Notebook con l'obiettivo di caricare i due dataset (train.csv e test.csv), addestrare il modello sui dati di train e testarlo su quelli di test.<br>
 
 ---
