@@ -11,7 +11,7 @@ Addestramento supervisionato di un modello di machine learning per predire il vi
 * [preparazione.ipynb](https://github.com/mariocuomo/artificial_intelligence/blob/main/challenges/challenge3/preparazione.ipynb)<br>
 É un Jupyter Notebook con l'obiettivo di caricare il dataset e splittarlo in due dataset (train.csv e test.csv) con un rapporto 5:1.
 
-* [train.ipynb](hhttps://github.com/mariocuomo/artificial_intelligence/blob/main/challenges/challenge3/train.ipynb)<br>
+* [train.ipynb](https://github.com/mariocuomo/artificial_intelligence/blob/main/challenges/challenge3/train.ipynb)<br>
 É un Jupyter Notebook con l'obiettivo di caricare i due dataset (train.csv e test.csv), addestrare il modello sui dati di train - con l'analisi aggiuntiva del dataset pokemon.csv - e testarlo su quelli di test.
 
 ---
